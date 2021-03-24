@@ -61,10 +61,32 @@ TEST_CASE("Tests GameOfLife::operator++(int)") {
   // (i) Preparar: Crie dois objetos da classe GameOfLife ambos de tamanho 5x5,
   // onde o primeiro representa uma matriz não trivial,
   // e o segundo representa a matriz esperada para a iteração seguinte.
+  GameOfLife g1(5, 5);
+  g1.Enliven(1, 2);
+  g1.Enliven(2, 3);
+  g1.Enliven(3, 1);
+  g1.Enliven(3, 2);
+  g1.Enliven(3, 3);
+
+  GameOfLife g2(5, 5);
+  g2.Enliven(2, 1);
+  g2.Enliven(2, 3);
+  g2.Enliven(3, 2);
+  g2.Enliven(3, 3);
+  g2.Enliven(4, 2);
+
   // (ii) Exercitar:  Executa o operador ++ no primeiro objeto.
+  g1++;
+
   // (iii) Verificar:  Verifica se, após o passo anterior, o estado de cada
   // célula do primeiro objeto é igual ao da célula correspondente do segundo.
-  CHECK(false);
+  for( int i : {0, 1, 2, 3, 4} ) {
+
+    for( int j : {0, 1, 2, 3, 4} ) {
+
+      CHECK( g1.alive(i,j) == g2.alive(i,j));
+    }
+  }  
 }
 
 TEST_CASE("Test the throwing of GameOfLife::OutOfBoundException") {

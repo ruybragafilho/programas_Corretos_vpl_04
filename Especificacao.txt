@@ -1,0 +1,20 @@
+VPL03b - Jogo da Vida (continuação)
+Disponível a partir de: terça, 24 Nov 2020, 00:00
+Data de entrega: terça, 23 Mar 2021, 23:59
+Arquivos requeridos: game_of_life.cpp, game_of_life_test.cpp, doctest.h, game_of_life.h (Baixar)
+Número máximo de arquivos: 5
+Tamanho máximo de arquivo carregado: 1 MiB
+Tipo de trabalho: Trabalho individual
+Este VPL é uma continuação do VPL anterior.
+Primeiramente, você deve copiar sua implementação dos arquivos game_of_life.h e game_of_life.cpp.
+Entretanto, em vez de implementar uma função main.cpp, você e irá completar a implementação do arquivo game_of_life_test.cpp,
+que por sua vez contém os testes de unidade da classe GameOfLife.
+
+O arquivo game_of_life_test.cpp já contém testes de unidade para vários métodos da classe GameOfLife.
+Neste VPL, você terá que fazer apenas uma implementação simples do método GameOfLife::operator++,
+que executa uma única iteração do jogo da vida.
+
+A estrutura do seu teste deve ter as seguintes etapas:
+(i) Preparar: Crie dois objetos da classe GameOfLife ambos de tamanho 5x5, onde o primeiro representa uma matriz não trivial, e o segundo representa a matriz esperada para a iteração seguinte.
+(ii) Exercitar:  Executa o operador ++ no primeiro objeto.
+(iii) Verificar:  Verifica se, após o passo anterior, o estado de cada célula do primeiro objeto é igual ao da célula correspondente do segundo.
